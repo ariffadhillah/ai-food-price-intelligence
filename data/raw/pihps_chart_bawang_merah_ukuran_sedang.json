@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "date": "2026-06-15T00:00:00",
+      "name": "Bawang Merah Ukuran Sedang",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 55000.0,
+      "harga": 0.0,
+      "fluc": null,
+      "isMin": 0,
+      "isMax": 1,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-16T00:00:00",
+      "name": "Bawang Merah Ukuran Sedang",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 54900.0,
+      "harga": -100.0,
+      "fluc": -0.18,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-17T00:00:00",
+      "name": "Bawang Merah Ukuran Sedang",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 54250.0,
+      "harga": -750.0,
+      "fluc": -1.36,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-18T00:00:00",
+      "name": "Bawang Merah Ukuran Sedang",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 53850.0,
+      "harga": -1150.0,
+      "fluc": -2.09,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-19T00:00:00",
+      "name": "Bawang Merah Ukuran Sedang",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 53600.0,
+      "harga": -1400.0,
+      "fluc": -2.55,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-22T00:00:00",
+      "name": "Bawang Merah Ukuran Sedang",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 52600.0,
+      "harga": -2400.0,
+      "fluc": -4.36,
+      "isMin": 1,
+      "isMax": 0,
+      "isTetap": 0
+    }
+  ]
+}

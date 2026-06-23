@@ -1,0 +1,340 @@
+﻿ProvID,Provinsi,Tanggal,Komoditas,Nilai,NilaiDiff,SemuaProvinsi,Kelompok,stdDev,Percentage,SemuaPercentage,stdDevPercentage,TanggalLast,TanggalInflasi,show
+18,Nusa Tenggara Barat,01 Sep 25,Beras,13900.0,Rp0,15950.0,5,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+26,Sulawesi Selatan,01 Sep 25,Beras,14350.0,-Rp50,15950.0,5,1100.0,-0.35,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+15,DI Yogyakarta,01 Sep 25,Beras,14450.0,Rp0,15950.0,5,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+10,Lampung,01 Sep 25,Beras,14750.0,-Rp50,15950.0,5,1100.0,-0.34,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+16,Jawa Timur,01 Sep 25,Beras,14800.0,Rp0,15950.0,5,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+12,Jawa Barat,01 Sep 25,Beras,14850.0,Rp0,15950.0,5,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+2,Sumatera Utara,01 Sep 25,Beras,14900.0,Rp0,15950.0,5,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+30,Sulawesi Barat,01 Sep 25,Beras,15000.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+14,Jawa Tengah,01 Sep 25,Beras,15100.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+5,Kepulauan Riau,01 Sep 25,Beras,15150.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+1,Aceh,01 Sep 25,Beras,15200.0,-Rp50,15950.0,4,1100.0,-0.33,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+9,Kepulauan Bangka Belitung,01 Sep 25,Beras,15300.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+6,Jambi,01 Sep 25,Beras,15400.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+19,Nusa Tenggara Timur,01 Sep 25,Beras,15400.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+8,Sumatera Selatan,01 Sep 25,Beras,15500.0,Rp100,15950.0,4,1100.0,0.65,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+11,Banten,01 Sep 25,Beras,15500.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+17,Bali,01 Sep 25,Beras,15500.0,-Rp100,15950.0,4,1100.0,-0.64,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+7,Bengkulu,01 Sep 25,Beras,15650.0,Rp0,15950.0,4,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+4,Riau,01 Sep 25,Beras,16300.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+13,DKI Jakarta,01 Sep 25,Beras,16300.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+20,Kalimantan Barat,01 Sep 25,Beras,16400.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+27,Sulawesi Tenggara,01 Sep 25,Beras,16450.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+23,Kalimantan Timur,01 Sep 25,Beras,16500.0,Rp50,15950.0,3,1100.0,0.3,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+29,Sulawesi Utara,01 Sep 25,Beras,16550.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+28,Sulawesi Tengah,01 Sep 25,Beras,16700.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+32,Maluku Utara,01 Sep 25,Beras,16700.0,-Rp400,15950.0,3,1100.0,-2.34,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+31,Maluku,01 Sep 25,Beras,16850.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+25,Gorontalo,01 Sep 25,Beras,16900.0,-Rp50,15950.0,3,1100.0,-0.29,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+34,Papua Barat,01 Sep 25,Beras,16900.0,Rp0,15950.0,3,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+3,Sumatera Barat,01 Sep 25,Beras,17150.0,Rp0,15950.0,2,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+22,Kalimantan Tengah,01 Sep 25,Beras,17400.0,Rp0,15950.0,2,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+21,Kalimantan Selatan,01 Sep 25,Beras,17450.0,Rp0,15950.0,2,1100.0,0.0,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+24,Kalimantan Utara,01 Sep 25,Beras,17450.0,Rp50,15950.0,2,1100.0,0.29,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+33,Papua,01 Sep 25,Beras,18950.0,Rp50,15950.0,1,1100.0,0.26,0.0,,29 Agt 25,01 Sep / 29 Agt,True
+18,Nusa Tenggara Barat,01 Okt 25,Beras,13950.0,-Rp50,15900.0,5,1100.0,-0.36,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+15,DI Yogyakarta,01 Okt 25,Beras,14200.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+26,Sulawesi Selatan,01 Okt 25,Beras,14300.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+2,Sumatera Utara,01 Okt 25,Beras,14650.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+30,Sulawesi Barat,01 Okt 25,Beras,14700.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+16,Jawa Timur,01 Okt 25,Beras,14800.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+1,Aceh,01 Okt 25,Beras,14850.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+10,Lampung,01 Okt 25,Beras,14850.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+12,Jawa Barat,01 Okt 25,Beras,14900.0,Rp0,15900.0,5,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+14,Jawa Tengah,01 Okt 25,Beras,15100.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+5,Kepulauan Riau,01 Okt 25,Beras,15150.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+9,Kepulauan Bangka Belitung,01 Okt 25,Beras,15350.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+6,Jambi,01 Okt 25,Beras,15400.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+19,Nusa Tenggara Timur,01 Okt 25,Beras,15450.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+8,Sumatera Selatan,01 Okt 25,Beras,15500.0,-Rp50,15900.0,4,1100.0,-0.32,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+11,Banten,01 Okt 25,Beras,15500.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+17,Bali,01 Okt 25,Beras,15500.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+7,Bengkulu,01 Okt 25,Beras,15550.0,Rp0,15900.0,4,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+4,Riau,01 Okt 25,Beras,16300.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+27,Sulawesi Tenggara,01 Okt 25,Beras,16300.0,-Rp50,15900.0,3,1100.0,-0.31,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+13,DKI Jakarta,01 Okt 25,Beras,16350.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+28,Sulawesi Tengah,01 Okt 25,Beras,16350.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+20,Kalimantan Barat,01 Okt 25,Beras,16400.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+29,Sulawesi Utara,01 Okt 25,Beras,16450.0,-Rp50,15900.0,3,1100.0,-0.3,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+23,Kalimantan Timur,01 Okt 25,Beras,16550.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+25,Gorontalo,01 Okt 25,Beras,16650.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+32,Maluku Utara,01 Okt 25,Beras,16650.0,-Rp50,15900.0,3,1100.0,-0.3,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+34,Papua Barat,01 Okt 25,Beras,16900.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+31,Maluku,01 Okt 25,Beras,16950.0,Rp0,15900.0,3,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+3,Sumatera Barat,01 Okt 25,Beras,17100.0,Rp0,15900.0,2,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+24,Kalimantan Utara,01 Okt 25,Beras,17300.0,Rp0,15900.0,2,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+21,Kalimantan Selatan,01 Okt 25,Beras,17450.0,Rp0,15900.0,2,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+22,Kalimantan Tengah,01 Okt 25,Beras,17500.0,Rp0,15900.0,2,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+33,Papua,01 Okt 25,Beras,18950.0,Rp0,15900.0,1,1100.0,0.0,0.0,,30 Sep 25,01 Okt / 30 Sep,True
+18,Nusa Tenggara Barat,31 Okt 25,Beras,13950.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+15,DI Yogyakarta,31 Okt 25,Beras,14200.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+26,Sulawesi Selatan,31 Okt 25,Beras,14200.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+30,Sulawesi Barat,31 Okt 25,Beras,14450.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+2,Sumatera Utara,31 Okt 25,Beras,14550.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+1,Aceh,31 Okt 25,Beras,14600.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+16,Jawa Timur,31 Okt 25,Beras,14700.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+10,Lampung,31 Okt 25,Beras,14750.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+12,Jawa Barat,31 Okt 25,Beras,14850.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+5,Kepulauan Riau,31 Okt 25,Beras,14950.0,Rp0,15750.0,5,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+11,Banten,31 Okt 25,Beras,15050.0,-Rp150,15750.0,4,1150.0,-0.99,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+14,Jawa Tengah,31 Okt 25,Beras,15050.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+9,Kepulauan Bangka Belitung,31 Okt 25,Beras,15300.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+19,Nusa Tenggara Timur,31 Okt 25,Beras,15350.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+6,Jambi,31 Okt 25,Beras,15400.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+17,Bali,31 Okt 25,Beras,15450.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+7,Bengkulu,31 Okt 25,Beras,15500.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+8,Sumatera Selatan,31 Okt 25,Beras,15500.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+28,Sulawesi Tengah,31 Okt 25,Beras,15600.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+27,Sulawesi Tenggara,31 Okt 25,Beras,15750.0,Rp0,15750.0,4,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+29,Sulawesi Utara,31 Okt 25,Beras,16050.0,Rp0,15750.0,3,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+25,Gorontalo,31 Okt 25,Beras,16200.0,Rp50,15750.0,3,1150.0,0.31,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+4,Riau,31 Okt 25,Beras,16300.0,Rp0,15750.0,3,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+13,DKI Jakarta,31 Okt 25,Beras,16300.0,Rp0,15750.0,3,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+23,Kalimantan Timur,31 Okt 25,Beras,16350.0,Rp0,15750.0,3,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+20,Kalimantan Barat,31 Okt 25,Beras,16400.0,Rp0,15750.0,3,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+31,Maluku,31 Okt 25,Beras,16850.0,-Rp50,15750.0,3,1150.0,-0.3,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+34,Papua Barat,31 Okt 25,Beras,17000.0,Rp50,15750.0,2,1150.0,0.29,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+3,Sumatera Barat,31 Okt 25,Beras,17050.0,Rp0,15750.0,2,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+32,Maluku Utara,31 Okt 25,Beras,17150.0,Rp0,15750.0,2,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+24,Kalimantan Utara,31 Okt 25,Beras,17250.0,Rp0,15750.0,2,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+21,Kalimantan Selatan,31 Okt 25,Beras,17450.0,Rp0,15750.0,2,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+22,Kalimantan Tengah,31 Okt 25,Beras,17600.0,Rp0,15750.0,2,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+33,Papua,31 Okt 25,Beras,18950.0,Rp0,15750.0,1,1150.0,0.0,0.0,,30 Okt 25,31 Okt / 30 Okt,True
+18,Nusa Tenggara Barat,01 Des 25,Beras,13850.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+26,Sulawesi Selatan,01 Des 25,Beras,14100.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+15,DI Yogyakarta,01 Des 25,Beras,14200.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+30,Sulawesi Barat,01 Des 25,Beras,14350.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+1,Aceh,01 Des 25,Beras,14500.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+10,Lampung,01 Des 25,Beras,14600.0,-Rp100,15700.0,5,1200.0,-0.68,0.0,,28 Nov 25,01 Des / 28 Nov,True
+16,Jawa Timur,01 Des 25,Beras,14600.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+2,Sumatera Utara,01 Des 25,Beras,14700.0,Rp150,15700.0,5,1200.0,1.03,0.0,,28 Nov 25,01 Des / 28 Nov,True
+12,Jawa Barat,01 Des 25,Beras,14800.0,Rp0,15700.0,5,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+29,Sulawesi Utara,01 Des 25,Beras,14900.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+5,Kepulauan Riau,01 Des 25,Beras,14950.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+11,Banten,01 Des 25,Beras,14950.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+14,Jawa Tengah,01 Des 25,Beras,15050.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+9,Kepulauan Bangka Belitung,01 Des 25,Beras,15300.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+19,Nusa Tenggara Timur,01 Des 25,Beras,15350.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+6,Jambi,01 Des 25,Beras,15400.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+17,Bali,01 Des 25,Beras,15400.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+28,Sulawesi Tengah,01 Des 25,Beras,15400.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+8,Sumatera Selatan,01 Des 25,Beras,15500.0,Rp50,15700.0,4,1200.0,0.32,0.0,,28 Nov 25,01 Des / 28 Nov,True
+7,Bengkulu,01 Des 25,Beras,15550.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+27,Sulawesi Tenggara,01 Des 25,Beras,15600.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+25,Gorontalo,01 Des 25,Beras,15650.0,Rp0,15700.0,4,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+4,Riau,01 Des 25,Beras,16250.0,Rp0,15700.0,3,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+23,Kalimantan Timur,01 Des 25,Beras,16250.0,Rp0,15700.0,3,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+13,DKI Jakarta,01 Des 25,Beras,16300.0,Rp0,15700.0,3,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+20,Kalimantan Barat,01 Des 25,Beras,16550.0,Rp0,15700.0,3,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+31,Maluku,01 Des 25,Beras,16700.0,Rp0,15700.0,3,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+34,Papua Barat,01 Des 25,Beras,16850.0,Rp0,15700.0,3,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+24,Kalimantan Utara,01 Des 25,Beras,17250.0,Rp0,15700.0,2,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+32,Maluku Utara,01 Des 25,Beras,17400.0,Rp0,15700.0,2,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+21,Kalimantan Selatan,01 Des 25,Beras,17550.0,Rp0,15700.0,2,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+22,Kalimantan Tengah,01 Des 25,Beras,17550.0,Rp0,15700.0,2,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+3,Sumatera Barat,01 Des 25,Beras,17600.0,Rp450,15700.0,2,1200.0,2.62,0.0,,28 Nov 25,01 Des / 28 Nov,True
+33,Papua,01 Des 25,Beras,18950.0,Rp0,15700.0,1,1200.0,0.0,0.0,,28 Nov 25,01 Des / 28 Nov,True
+18,Nusa Tenggara Barat,01 Jan 26,Beras,13850.0,Rp0,15750.0,5,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+15,DI Yogyakarta,01 Jan 26,Beras,14200.0,Rp0,15750.0,5,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+26,Sulawesi Selatan,01 Jan 26,Beras,14250.0,Rp150,15750.0,5,1200.0,1.06,0.0,,31 Des 25,01 Jan / 31 Des,True
+30,Sulawesi Barat,01 Jan 26,Beras,14350.0,Rp0,15750.0,5,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+16,Jawa Timur,01 Jan 26,Beras,14550.0,Rp0,15750.0,5,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+10,Lampung,01 Jan 26,Beras,14700.0,Rp0,15750.0,5,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+12,Jawa Barat,01 Jan 26,Beras,14800.0,Rp0,15750.0,5,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+11,Banten,01 Jan 26,Beras,14950.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+14,Jawa Tengah,01 Jan 26,Beras,14950.0,-Rp50,15750.0,4,1200.0,-0.33,0.0,,31 Des 25,01 Jan / 31 Des,True
+29,Sulawesi Utara,01 Jan 26,Beras,15000.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+1,Aceh,01 Jan 26,Beras,15100.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+2,Sumatera Utara,01 Jan 26,Beras,15100.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+9,Kepulauan Bangka Belitung,01 Jan 26,Beras,15300.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+19,Nusa Tenggara Timur,01 Jan 26,Beras,15300.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+5,Kepulauan Riau,01 Jan 26,Beras,15350.0,Rp50,15750.0,4,1200.0,0.33,0.0,,31 Des 25,01 Jan / 31 Des,True
+25,Gorontalo,01 Jan 26,Beras,15350.0,-Rp150,15750.0,4,1200.0,-0.97,0.0,,31 Des 25,01 Jan / 31 Des,True
+28,Sulawesi Tengah,01 Jan 26,Beras,15350.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+6,Jambi,01 Jan 26,Beras,15400.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+17,Bali,01 Jan 26,Beras,15400.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+7,Bengkulu,01 Jan 26,Beras,15500.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+8,Sumatera Selatan,01 Jan 26,Beras,15500.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+27,Sulawesi Tenggara,01 Jan 26,Beras,15500.0,Rp0,15750.0,4,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+23,Kalimantan Timur,01 Jan 26,Beras,16200.0,Rp0,15750.0,3,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+13,DKI Jakarta,01 Jan 26,Beras,16300.0,Rp0,15750.0,3,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+4,Riau,01 Jan 26,Beras,16350.0,Rp0,15750.0,3,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+20,Kalimantan Barat,01 Jan 26,Beras,16600.0,Rp0,15750.0,3,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+31,Maluku,01 Jan 26,Beras,16650.0,Rp0,15750.0,3,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+34,Papua Barat,01 Jan 26,Beras,16850.0,Rp0,15750.0,2,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+24,Kalimantan Utara,01 Jan 26,Beras,17250.0,Rp0,15750.0,2,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+32,Maluku Utara,01 Jan 26,Beras,17400.0,Rp0,15750.0,2,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+21,Kalimantan Selatan,01 Jan 26,Beras,17550.0,Rp0,15750.0,2,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+22,Kalimantan Tengah,01 Jan 26,Beras,17900.0,Rp0,15750.0,1,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+3,Sumatera Barat,01 Jan 26,Beras,18200.0,Rp0,15750.0,1,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+33,Papua,01 Jan 26,Beras,18750.0,Rp0,15750.0,1,1200.0,0.0,0.0,,31 Des 25,01 Jan / 31 Des,True
+18,Nusa Tenggara Barat,30 Jan 26,Beras,13850.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+15,DI Yogyakarta,30 Jan 26,Beras,14200.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+26,Sulawesi Selatan,30 Jan 26,Beras,14200.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+30,Sulawesi Barat,30 Jan 26,Beras,14350.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+16,Jawa Timur,30 Jan 26,Beras,14550.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+10,Lampung,30 Jan 26,Beras,14750.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+12,Jawa Barat,30 Jan 26,Beras,14850.0,Rp0,15750.0,5,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+11,Banten,30 Jan 26,Beras,14950.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+29,Sulawesi Utara,30 Jan 26,Beras,15000.0,-Rp50,15750.0,4,1200.0,-0.33,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+2,Sumatera Utara,30 Jan 26,Beras,15050.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+14,Jawa Tengah,30 Jan 26,Beras,15050.0,Rp50,15750.0,4,1200.0,0.33,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+9,Kepulauan Bangka Belitung,30 Jan 26,Beras,15150.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+25,Gorontalo,30 Jan 26,Beras,15200.0,Rp100,15750.0,4,1200.0,0.66,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+1,Aceh,30 Jan 26,Beras,15250.0,Rp100,15750.0,4,1200.0,0.66,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+19,Nusa Tenggara Timur,30 Jan 26,Beras,15300.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+28,Sulawesi Tengah,30 Jan 26,Beras,15300.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+6,Jambi,30 Jan 26,Beras,15400.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+17,Bali,30 Jan 26,Beras,15400.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+7,Bengkulu,30 Jan 26,Beras,15500.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+8,Sumatera Selatan,30 Jan 26,Beras,15500.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+27,Sulawesi Tenggara,30 Jan 26,Beras,15500.0,Rp0,15750.0,4,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+5,Kepulauan Riau,30 Jan 26,Beras,15550.0,Rp100,15750.0,4,1200.0,0.65,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+23,Kalimantan Timur,30 Jan 26,Beras,16050.0,-Rp50,15750.0,3,1200.0,-0.31,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+20,Kalimantan Barat,30 Jan 26,Beras,16250.0,Rp0,15750.0,3,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+4,Riau,30 Jan 26,Beras,16350.0,Rp0,15750.0,3,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+13,DKI Jakarta,30 Jan 26,Beras,16500.0,Rp0,15750.0,3,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+31,Maluku,30 Jan 26,Beras,16700.0,Rp0,15750.0,3,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+34,Papua Barat,30 Jan 26,Beras,16750.0,Rp0,15750.0,3,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+24,Kalimantan Utara,30 Jan 26,Beras,17250.0,Rp0,15750.0,2,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+32,Maluku Utara,30 Jan 26,Beras,17400.0,Rp0,15750.0,2,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+21,Kalimantan Selatan,30 Jan 26,Beras,17750.0,Rp0,15750.0,2,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+22,Kalimantan Tengah,30 Jan 26,Beras,17850.0,Rp0,15750.0,2,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+3,Sumatera Barat,30 Jan 26,Beras,18250.0,Rp0,15750.0,1,1200.0,0.0,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+33,Papua,30 Jan 26,Beras,18900.0,Rp50,15750.0,1,1200.0,0.27,0.0,,29 Jan 26,30 Jan / 29 Jan,True
+18,Nusa Tenggara Barat,27 Feb 26,Beras,13900.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+15,DI Yogyakarta,27 Feb 26,Beras,14200.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+26,Sulawesi Selatan,27 Feb 26,Beras,14250.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+30,Sulawesi Barat,27 Feb 26,Beras,14350.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+16,Jawa Timur,27 Feb 26,Beras,14700.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+2,Sumatera Utara,27 Feb 26,Beras,14800.0,-Rp100,15800.0,5,1250.0,-0.67,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+10,Lampung,27 Feb 26,Beras,14850.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+12,Jawa Barat,27 Feb 26,Beras,14900.0,Rp0,15800.0,5,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+29,Sulawesi Utara,27 Feb 26,Beras,15000.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+25,Gorontalo,27 Feb 26,Beras,15100.0,Rp50,15800.0,4,1250.0,0.33,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+9,Kepulauan Bangka Belitung,27 Feb 26,Beras,15150.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+1,Aceh,27 Feb 26,Beras,15250.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+14,Jawa Tengah,27 Feb 26,Beras,15250.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+19,Nusa Tenggara Timur,27 Feb 26,Beras,15300.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+28,Sulawesi Tengah,27 Feb 26,Beras,15300.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+6,Jambi,27 Feb 26,Beras,15400.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+7,Bengkulu,27 Feb 26,Beras,15400.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+11,Banten,27 Feb 26,Beras,15400.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+17,Bali,27 Feb 26,Beras,15400.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+5,Kepulauan Riau,27 Feb 26,Beras,15450.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+27,Sulawesi Tenggara,27 Feb 26,Beras,15450.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+8,Sumatera Selatan,27 Feb 26,Beras,15650.0,Rp0,15800.0,4,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+23,Kalimantan Timur,27 Feb 26,Beras,16050.0,Rp0,15800.0,3,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+20,Kalimantan Barat,27 Feb 26,Beras,16300.0,Rp0,15800.0,3,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+4,Riau,27 Feb 26,Beras,16400.0,Rp0,15800.0,3,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+13,DKI Jakarta,27 Feb 26,Beras,16600.0,Rp0,15800.0,3,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+31,Maluku,27 Feb 26,Beras,16700.0,Rp0,15800.0,3,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+34,Papua Barat,27 Feb 26,Beras,16850.0,Rp0,15800.0,3,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+32,Maluku Utara,27 Feb 26,Beras,17300.0,Rp0,15800.0,2,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+24,Kalimantan Utara,27 Feb 26,Beras,17600.0,Rp0,15800.0,2,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+21,Kalimantan Selatan,27 Feb 26,Beras,17900.0,Rp0,15800.0,2,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+22,Kalimantan Tengah,27 Feb 26,Beras,17900.0,Rp0,15800.0,2,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+3,Sumatera Barat,27 Feb 26,Beras,18300.0,Rp0,15800.0,1,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+33,Papua,27 Feb 26,Beras,19100.0,Rp0,15800.0,1,1250.0,0.0,0.0,,26 Feb 26,27 Feb / 26 Feb,True
+18,Nusa Tenggara Barat,01 Apr 26,Beras,13950.0,Rp0,15900.0,5,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+15,DI Yogyakarta,01 Apr 26,Beras,14200.0,Rp0,15900.0,5,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+26,Sulawesi Selatan,01 Apr 26,Beras,14250.0,Rp0,15900.0,5,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+30,Sulawesi Barat,01 Apr 26,Beras,14350.0,Rp0,15900.0,5,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+16,Jawa Timur,01 Apr 26,Beras,14700.0,Rp0,15900.0,5,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+2,Sumatera Utara,01 Apr 26,Beras,14850.0,Rp50,15900.0,5,1300.0,0.34,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+10,Lampung,01 Apr 26,Beras,14850.0,Rp0,15900.0,5,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+29,Sulawesi Utara,01 Apr 26,Beras,14900.0,Rp50,15900.0,5,1300.0,0.34,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+25,Gorontalo,01 Apr 26,Beras,15100.0,-Rp50,15900.0,4,1300.0,-0.33,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+12,Jawa Barat,01 Apr 26,Beras,15150.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+1,Aceh,01 Apr 26,Beras,15200.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+9,Kepulauan Bangka Belitung,01 Apr 26,Beras,15200.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+19,Nusa Tenggara Timur,01 Apr 26,Beras,15250.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+28,Sulawesi Tengah,01 Apr 26,Beras,15300.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+14,Jawa Tengah,01 Apr 26,Beras,15350.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+7,Bengkulu,01 Apr 26,Beras,15400.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+11,Banten,01 Apr 26,Beras,15400.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+17,Bali,01 Apr 26,Beras,15400.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+5,Kepulauan Riau,01 Apr 26,Beras,15500.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+6,Jambi,01 Apr 26,Beras,15550.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+27,Sulawesi Tenggara,01 Apr 26,Beras,15600.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+8,Sumatera Selatan,01 Apr 26,Beras,15800.0,Rp0,15900.0,4,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+23,Kalimantan Timur,01 Apr 26,Beras,16050.0,Rp0,15900.0,3,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+20,Kalimantan Barat,01 Apr 26,Beras,16350.0,Rp0,15900.0,3,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+4,Riau,01 Apr 26,Beras,16400.0,Rp0,15900.0,3,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+31,Maluku,01 Apr 26,Beras,16750.0,Rp0,15900.0,3,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+13,DKI Jakarta,01 Apr 26,Beras,16800.0,Rp0,15900.0,3,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+34,Papua Barat,01 Apr 26,Beras,16850.0,Rp0,15900.0,3,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+32,Maluku Utara,01 Apr 26,Beras,17650.0,Rp0,15900.0,2,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+24,Kalimantan Utara,01 Apr 26,Beras,17700.0,Rp0,15900.0,2,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+3,Sumatera Barat,01 Apr 26,Beras,18150.0,Rp0,15900.0,1,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+21,Kalimantan Selatan,01 Apr 26,Beras,18200.0,Rp0,15900.0,1,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+22,Kalimantan Tengah,01 Apr 26,Beras,18600.0,Rp0,15900.0,1,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+33,Papua,01 Apr 26,Beras,19100.0,Rp0,15900.0,1,1300.0,0.0,0.0,,31 Mar 26,01 Apr / 31 Mar,True
+18,Nusa Tenggara Barat,01 Mei 26,Beras,13900.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+15,DI Yogyakarta,01 Mei 26,Beras,14200.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+26,Sulawesi Selatan,01 Mei 26,Beras,14250.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+30,Sulawesi Barat,01 Mei 26,Beras,14500.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+16,Jawa Timur,01 Mei 26,Beras,14700.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+2,Sumatera Utara,01 Mei 26,Beras,14800.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+10,Lampung,01 Mei 26,Beras,14850.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+29,Sulawesi Utara,01 Mei 26,Beras,14950.0,Rp0,15950.0,5,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+25,Gorontalo,01 Mei 26,Beras,15050.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+1,Aceh,01 Mei 26,Beras,15150.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+12,Jawa Barat,01 Mei 26,Beras,15150.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+9,Kepulauan Bangka Belitung,01 Mei 26,Beras,15300.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+14,Jawa Tengah,01 Mei 26,Beras,15300.0,-Rp50,15950.0,4,3000.0,-0.33,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+19,Nusa Tenggara Timur,01 Mei 26,Beras,15300.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+28,Sulawesi Tengah,01 Mei 26,Beras,15300.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+5,Kepulauan Riau,01 Mei 26,Beras,15550.0,Rp50,15950.0,4,3000.0,0.32,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+6,Jambi,01 Mei 26,Beras,15550.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+7,Bengkulu,01 Mei 26,Beras,15650.0,Rp100,15950.0,4,3000.0,0.64,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+11,Banten,01 Mei 26,Beras,15700.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+17,Bali,01 Mei 26,Beras,15750.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+8,Sumatera Selatan,01 Mei 26,Beras,15800.0,Rp0,15950.0,4,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+23,Kalimantan Timur,01 Mei 26,Beras,16200.0,Rp0,15950.0,3,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+4,Riau,01 Mei 26,Beras,16450.0,Rp0,15950.0,3,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+20,Kalimantan Barat,01 Mei 26,Beras,16650.0,Rp0,15950.0,3,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+13,DKI Jakarta,01 Mei 26,Beras,16800.0,Rp0,15950.0,3,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+31,Maluku,01 Mei 26,Beras,16800.0,Rp0,15950.0,3,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+34,Papua Barat,01 Mei 26,Beras,16850.0,Rp0,15950.0,3,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+24,Kalimantan Utara,01 Mei 26,Beras,17050.0,-Rp550,15950.0,3,3000.0,-3.13,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+32,Maluku Utara,01 Mei 26,Beras,17650.0,Rp0,15950.0,2,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+3,Sumatera Barat,01 Mei 26,Beras,18150.0,Rp0,15950.0,2,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+21,Kalimantan Selatan,01 Mei 26,Beras,18750.0,Rp0,15950.0,1,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+33,Papua,01 Mei 26,Beras,19100.0,Rp0,15950.0,1,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+22,Kalimantan Tengah,01 Mei 26,Beras,19300.0,Rp0,15950.0,1,3000.0,0.0,0.0,,30 Apr 26,01 Mei / 30 Apr,True
+18,Nusa Tenggara Barat,01 Jun 26,Beras,13950.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+15,DI Yogyakarta,01 Jun 26,Beras,14200.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+26,Sulawesi Selatan,01 Jun 26,Beras,14300.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+30,Sulawesi Barat,01 Jun 26,Beras,14600.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+16,Jawa Timur,01 Jun 26,Beras,14850.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+2,Sumatera Utara,01 Jun 26,Beras,14900.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+10,Lampung,01 Jun 26,Beras,14950.0,Rp0,16000.0,5,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+29,Sulawesi Utara,01 Jun 26,Beras,15050.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+1,Aceh,01 Jun 26,Beras,15150.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+12,Jawa Barat,01 Jun 26,Beras,15150.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+9,Kepulauan Bangka Belitung,01 Jun 26,Beras,15350.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+19,Nusa Tenggara Timur,01 Jun 26,Beras,15350.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+25,Gorontalo,01 Jun 26,Beras,15350.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+14,Jawa Tengah,01 Jun 26,Beras,15400.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+28,Sulawesi Tengah,01 Jun 26,Beras,15400.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+5,Kepulauan Riau,01 Jun 26,Beras,15550.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+6,Jambi,01 Jun 26,Beras,15550.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+7,Bengkulu,01 Jun 26,Beras,15550.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+11,Banten,01 Jun 26,Beras,15700.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+17,Bali,01 Jun 26,Beras,15750.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+27,Sulawesi Tenggara,01 Jun 26,Beras,15750.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+8,Sumatera Selatan,01 Jun 26,Beras,15950.0,Rp0,16000.0,4,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+23,Kalimantan Timur,01 Jun 26,Beras,16300.0,Rp0,16000.0,3,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+4,Riau,01 Jun 26,Beras,16450.0,Rp0,16000.0,3,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+20,Kalimantan Barat,01 Jun 26,Beras,16750.0,Rp0,16000.0,3,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+13,DKI Jakarta,01 Jun 26,Beras,16850.0,Rp0,16000.0,3,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+31,Maluku,01 Jun 26,Beras,16850.0,Rp0,16000.0,3,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+24,Kalimantan Utara,01 Jun 26,Beras,17050.0,-Rp250,16000.0,3,1350.0,-1.45,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+34,Papua Barat,01 Jun 26,Beras,17050.0,Rp0,16000.0,3,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+32,Maluku Utara,01 Jun 26,Beras,17650.0,Rp0,16000.0,2,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+3,Sumatera Barat,01 Jun 26,Beras,17850.0,Rp0,16000.0,2,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+21,Kalimantan Selatan,01 Jun 26,Beras,18950.0,Rp0,16000.0,1,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+33,Papua,01 Jun 26,Beras,19050.0,Rp0,16000.0,1,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True
+22,Kalimantan Tengah,01 Jun 26,Beras,19350.0,Rp0,16000.0,1,1350.0,0.0,0.0,,29 Mei 26,01 Jun / 29 Mei,True

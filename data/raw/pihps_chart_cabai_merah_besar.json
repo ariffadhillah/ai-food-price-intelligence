@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "date": "2026-06-15T00:00:00",
+      "name": "Cabai Merah Besar",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 59100.0,
+      "harga": 0.0,
+      "fluc": null,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-16T00:00:00",
+      "name": "Cabai Merah Besar",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 59350.0,
+      "harga": 250.0,
+      "fluc": 0.42,
+      "isMin": 0,
+      "isMax": 1,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-17T00:00:00",
+      "name": "Cabai Merah Besar",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 58350.0,
+      "harga": -750.0,
+      "fluc": -1.27,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-18T00:00:00",
+      "name": "Cabai Merah Besar",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 57850.0,
+      "harga": -1250.0,
+      "fluc": -2.12,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-19T00:00:00",
+      "name": "Cabai Merah Besar",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 57500.0,
+      "harga": -1600.0,
+      "fluc": -2.71,
+      "isMin": 0,
+      "isMax": 0,
+      "isTetap": 0
+    },
+    {
+      "date": "2026-06-22T00:00:00",
+      "name": "Cabai Merah Besar",
+      "denomination": "kg",
+      "price_type_id": 1,
+      "nominal": 54850.0,
+      "harga": -4250.0,
+      "fluc": -7.19,
+      "isMin": 1,
+      "isMax": 0,
+      "isTetap": 0
+    }
+  ]
+}
