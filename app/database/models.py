@@ -68,3 +68,28 @@ class MarketMetric(Base):
         DateTime,
         server_default=func.now()
     )
+
+
+class CommodityScore(Base):
+
+    __tablename__ = "commodity_scores"
+
+    id = Column(Integer, primary_key=True)
+
+    commodity_name = Column(String(255))
+    province_name = Column(String(255))
+
+    latest_date = Column(Date)
+    latest_price = Column(Float)
+
+    change_1m = Column(Float)
+    change_3m = Column(Float)
+    change_6m = Column(Float)
+
+    score = Column(Float)
+    risk_level = Column(String(50))
+
+    created_at = Column(
+        DateTime,
+        server_default=func.now()
+    )
