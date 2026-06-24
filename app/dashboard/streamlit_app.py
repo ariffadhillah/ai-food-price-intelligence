@@ -11,6 +11,17 @@ st.set_page_config(
 )
 
 
+def generate_insight(row):
+    return (
+        f"**{row['commodity_name']} di {row['province_name']}** berada di harga "
+        f"**Rp {row['latest_price']:,.0f}**. "
+        f"Perubahan 1 bulan **{row['change_1m']:.2f}%**, "
+        f"3 bulan **{row['change_3m']:.2f}%**, "
+        f"dan 6 bulan **{row['change_6m']:.2f}%**. "
+        f"Risk score **{row['score']:.2f}** dengan level **{row['risk_level']}**."
+    )
+
+
 @st.cache_data
 def load_data():
     prices = pd.read_sql("SELECT * FROM commodity_prices", engine)
@@ -40,7 +51,7 @@ top_risk_display["change_6m"] = top_risk_display["change_6m"].apply(lambda x: f"
 top_risk_display["score"] = top_risk_display["score"].apply(lambda x: f"{x:.2f}")
 
 st.dataframe(
-    top_risk[
+    top_risk_display[
         [
             "commodity_name",
             "province_name",
@@ -55,17 +66,6 @@ st.dataframe(
     use_container_width=True,
 )
 
-# fig_risk = px.bar(
-#     top_risk,
-#     x="score",
-#     y="commodity_name",
-#     color="risk_level",
-#     orientation="h",
-#     hover_data=["province_name", "latest_price", "change_1m", "change_3m", "change_6m"],
-#     title="Top 10 Commodity Risk Score",
-# )
-
-# top_risk["label"] = top_risk["commodity_name"] + " - " + top_risk["province_name"]
 
 top_risk = scores.sort_values("score", ascending=False).head(10).copy()
 top_risk["label"] = top_risk["commodity_name"] + " - " + top_risk["province_name"]
@@ -86,6 +86,13 @@ fig_risk.update_layout(
 )
 
 st.plotly_chart(fig_risk, use_container_width=True)
+
+st.subheader("🧠 AI Market Insights")
+
+top_insights = scores.sort_values("score", ascending=False).head(5)
+
+for _, row in top_insights.iterrows():
+    st.markdown(generate_insight(row))
 
 st.subheader("📈 Commodity Price Trend")
 
