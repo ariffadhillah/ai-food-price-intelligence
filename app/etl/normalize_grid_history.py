@@ -109,7 +109,7 @@ def normalize_file(file_path: Path) -> pd.DataFrame:
 def main():
     all_data = []
 
-    files = sorted(RAW_DIR.glob("pihps_grid_commodity_*.json"))
+    files = sorted(RAW_DIR.glob("pihps_grid_*.json"))
 
     for file_path in files:
         print(f"Normalizing: {file_path.name}")

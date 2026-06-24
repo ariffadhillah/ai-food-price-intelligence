@@ -62,22 +62,56 @@ def main():
         "Jun 1, 2026",
     ]
 
-    commodity_id = 1  # Beras
+    commodity_ids = {
+        1: "beras",
+        2: "daging_ayam",
+        3: "daging_sapi",
+        4: "telur_ayam",
+        5: "bawang_merah",
+        6: "bawang_putih",
+        7: "cabai_merah",
+        8: "cabai_rawit",
+        9: "minyak_goreng",
+        10: "gula_pasir",
+    }
 
-    for date_text in dates:
-        print(f"Fetching {date_text} | commodity_id={commodity_id}")
+    for commodity_id, commodity_slug in commodity_ids.items():
 
-        data = get_grid_data(date_text=date_text, commodity_id=commodity_id)
+        for date_text in dates:
 
-        safe_date = datetime.strptime(date_text, "%b %d, %Y").strftime("%Y_%m_%d")
-        filename = f"pihps_grid_commodity_{commodity_id}_{safe_date}.json"
+            print(
+                f"Fetching {date_text} | "
+                f"{commodity_slug} | "
+                f"commodity_id={commodity_id}"
+            )
 
-        output_path = save_json(data, filename)
+            data = get_grid_data(
+                date_text=date_text,
+                commodity_id=commodity_id
+            )
 
-        rows = data.get("data", [])
-        print(f"Saved: {output_path} | rows: {len(rows)}")
+            safe_date = datetime.strptime(
+                date_text,
+                "%b %d, %Y"
+            ).strftime("%Y_%m_%d")
 
-        time.sleep(1)
+            filename = (
+                f"pihps_grid_"
+                f"{commodity_slug}_"
+                f"{commodity_id}_"
+                f"{safe_date}.json"
+            )
+
+            output_path = save_json(data, filename)
+
+            rows = data.get("data", [])
+
+            print(
+                f"Saved: {output_path} | "
+                f"rows: {len(rows)}"
+            )
+
+            time.sleep(1)
 
 
 if __name__ == "__main__":
