@@ -39,3 +39,32 @@ class CommodityPrice(Base):
         DateTime,
         server_default=func.now()
     )
+
+
+class MarketMetric(Base):
+
+    __tablename__ = "market_metrics"
+
+    id = Column(Integer, primary_key=True)
+
+    commodity_name = Column(String(255))
+    province_name = Column(String(255))
+
+    latest_date = Column(Date)
+    latest_price = Column(Float)
+
+    price_1m_ago = Column(Float)
+    change_1m = Column(Float)
+
+    price_3m_ago = Column(Float)
+    change_3m = Column(Float)
+
+    price_6m_ago = Column(Float)
+    change_6m = Column(Float)
+
+    trend = Column(String(50))
+
+    created_at = Column(
+        DateTime,
+        server_default=func.now()
+    )
