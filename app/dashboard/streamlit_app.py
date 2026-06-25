@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 from app.database.db import engine
-
+from app.ai.price_forecaster import forecast_price
 
 st.set_page_config(
     page_title="AI Food Price Intelligence",
@@ -160,6 +160,71 @@ fig_price = px.line(
 st.plotly_chart(fig_price, use_container_width=True)
 
 st.subheader("📊 Market Metrics")
+
+
+st.subheader("🔮 Price Forecast")
+
+forecast_df = forecast_price(
+    commodity_name=selected_commodity,
+    province_name=selected_province,
+    periods=3,
+)
+
+if forecast_df is not None:
+    forecast_display = forecast_df.copy()
+    forecast_display["predicted_price"] = forecast_display["predicted_price"].apply(
+        lambda x: f"Rp {x:,.0f}"
+    )
+
+    st.dataframe(
+        forecast_display[
+            [
+                "forecast_date",
+                "commodity_name",
+                "province_name",
+                "predicted_price",
+            ]
+        ],
+        use_container_width=True,
+    )
+
+    historical_chart = filtered[["price_date", "price"]].copy()
+    historical_chart = historical_chart.rename(
+        columns={
+            "price_date": "date",
+            "price": "price",
+        }
+    )
+    historical_chart["type"] = "Historical"
+
+    forecast_chart = forecast_df[["forecast_date", "predicted_price"]].copy()
+    forecast_chart = forecast_chart.rename(
+        columns={
+            "forecast_date": "date",
+            "predicted_price": "price",
+        }
+    )
+    forecast_chart["date"] = pd.to_datetime(forecast_chart["date"])
+    forecast_chart["type"] = "Forecast"
+
+    combined_chart = pd.concat(
+        [historical_chart, forecast_chart],
+        ignore_index=True,
+    )
+
+    fig_forecast = px.line(
+        combined_chart,
+        x="date",
+        y="price",
+        color="type",
+        markers=True,
+        title=f"Forecast Harga {selected_commodity} - {selected_province}",
+    )
+
+    st.plotly_chart(fig_forecast, use_container_width=True)
+
+else:
+    st.warning("Data belum cukup untuk membuat forecast.")
 
 metric_row = metrics[
     (metrics["commodity_name"] == selected_commodity)
