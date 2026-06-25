@@ -166,25 +166,6 @@ if page == "Forecast Analysis":
     )
 
 
-    summary = generate_ai_executive_summary(scores)
-
-    st.subheader("🤖 AI Executive Summary")
-
-    s1, s2, s3, s4 = st.columns(4)
-
-    s1.metric("Market Health", f"{summary['icon']} {summary['market_status']}")
-    s2.metric("Overall Risk", summary["risk_level"])
-    s3.metric("Most Critical Commodity", summary["top_commodity"])
-    s4.metric("Highest Risk Province", summary["top_province"])
-
-    st.warning(
-        f"AI Summary: Market condition is **{summary['market_status']}**. "
-        f"The most critical commodity is **{summary['top_commodity']}** in "
-        f"**{summary['top_province']}** with risk score **{summary['top_score']:.2f}**. "
-        f"There are **{summary['high_count']}** high-risk commodity-province combinations."
-    )
-
-
     forecast_display = forecast_df.copy()
     forecast_display["predicted_price"] = forecast_display["predicted_price"].apply(
         lambda x: f"Rp {x:,.0f}"
@@ -332,6 +313,25 @@ k2.metric("Commodities", total_commodities)
 k3.metric("Provinces", total_provinces)
 k4.metric("High Risk Items", high_risk_count)
 
+summary = generate_ai_executive_summary(scores)
+
+st.subheader("🤖 AI Executive Summary")
+
+s1, s2, s3, s4 = st.columns(4)
+
+s1.metric("Market Health", f"{summary['icon']} {summary['market_status']}")
+s2.metric("Overall Risk", summary["risk_level"])
+s3.metric("Most Critical Commodity", summary["top_commodity"])
+s4.metric("Highest Risk Province", summary["top_province"])
+
+st.warning(
+    f"AI Summary: Market condition is **{summary['market_status']}**. "
+    f"The most critical commodity is **{summary['top_commodity']}** "
+    f"in **{summary['top_province']}** "
+    f"with risk score **{summary['top_score']:.2f}**. "
+    f"There are **{summary['high_count']}** high-risk commodity-province combinations."
+)
+
 st.info(
     f"Highest current risk: **{highest_risk['commodity_name']}** "
     f"in **{highest_risk['province_name']}** "
@@ -450,7 +450,6 @@ fig_price = px.line(
 st.plotly_chart(fig_price, use_container_width=True)
 
 
-st.subheader("📊 Market Metrics")
 
 metric_row = metrics[
     (metrics["commodity_name"] == selected_commodity)
@@ -468,95 +467,3 @@ if not metric_row.empty:
     c4.metric("6M Change", f"{row['change_6m']:.2f}%")
 
 
-st.subheader("🔮 Price Forecast")
-
-forecast_df = forecast_price(
-    commodity_name=selected_commodity,
-    province_name=selected_province,
-    periods=3,
-)
-
-if forecast_df is not None:
-    latest_price = filtered.sort_values("price_date").iloc[-1]["price"]
-
-    prediction = generate_prediction_summary(
-        commodity_name=selected_commodity,
-        province_name=selected_province,
-        latest_price=latest_price,
-        forecast_df=forecast_df,
-    )
-
-    p1, p2, p3 = st.columns(3)
-
-    p1.metric("Predicted Price", f"Rp {prediction['final_forecast_price']:,.0f}")
-    p2.metric("Expected Change", f"{prediction['expected_change']:.2f}%")
-    p3.metric("Confidence", prediction["confidence"])
-
-    st.info(
-        f"**Trend:** {prediction['trend']}  \n\n"
-        f"{prediction['summary']}  \n\n"
-        f"**Recommendation:** {prediction['recommendation']}"
-    )
-
-    forecast_display = forecast_df.copy()
-    forecast_display["predicted_price"] = forecast_display["predicted_price"].apply(
-        lambda x: f"Rp {x:,.0f}"
-    )
-
-    st.dataframe(
-        forecast_display[
-            [
-                "forecast_date",
-                "commodity_name",
-                "province_name",
-                "predicted_price",
-            ]
-        ],
-        use_container_width=True,
-    )
-
-    historical_chart = filtered[["price_date", "price"]].copy()
-    historical_chart = historical_chart.rename(
-        columns={
-            "price_date": "date",
-            "price": "price",
-        }
-    )
-    historical_chart["type"] = "Historical"
-
-    last_historical = historical_chart.sort_values("date").iloc[-1:].copy()
-    last_historical["type"] = "Forecast"
-
-    forecast_chart = forecast_df[["forecast_date", "predicted_price"]].copy()
-    forecast_chart = forecast_chart.rename(
-        columns={
-            "forecast_date": "date",
-            "predicted_price": "price",
-        }
-    )
-    forecast_chart["date"] = pd.to_datetime(forecast_chart["date"])
-    forecast_chart["type"] = "Forecast"
-
-    forecast_chart = pd.concat(
-        [last_historical, forecast_chart],
-        ignore_index=True,
-    )
-
-    combined_chart = pd.concat(
-        [historical_chart, forecast_chart],
-        ignore_index=True,
-    )
-
-    fig_forecast = px.line(
-        combined_chart,
-        x="date",
-        y="price",
-        color="type",
-        markers=True,
-        title=f"Forecast Harga {selected_commodity} - {selected_province}",
-    )
-
-    st.plotly_chart(fig_forecast, use_container_width=True)
-
-else:
-    st.warning("Data belum cukup untuk membuat forecast.")
