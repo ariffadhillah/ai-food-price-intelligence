@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 from app.database.db import engine
-from app.ai.price_forecaster import forecast_price
+from app.ai.price_forecaster import forecast_price, generate_prediction_summary
 
 st.set_page_config(
     page_title="AI Food Price Intelligence",
@@ -54,6 +54,16 @@ def load_data():
 
 prices, metrics, scores = load_data()
 
+page = st.sidebar.radio(
+    "Navigation",
+    [
+        "Executive Overview",
+        "Commodity Explorer",
+        "Forecast Analysis",
+        "Data Explorer",
+    ],
+)
+
 st.title("AI Food Price Intelligence Dashboard")
 st.caption("Indonesia basic goods price intelligence using PIHPS + PostgreSQL + Analytics")
 
@@ -77,6 +87,32 @@ st.info(
     f"in **{highest_risk['province_name']}** "
     f"with risk score **{highest_risk['score']:.2f}**."
 )
+
+
+st.subheader("📈 Biggest Movers")
+
+col_up, col_down = st.columns(2)
+
+top_gainers = scores.sort_values("change_1m", ascending=False).head(5)
+top_losers = scores.sort_values("change_1m", ascending=True).head(5)
+
+with col_up:
+    st.markdown("### Top Price Increases")
+    for _, row in top_gainers.iterrows():
+        st.metric(
+            f"{row['commodity_name']} - {row['province_name']}",
+            f"{row['change_1m']:.2f}%",
+            f"Rp {row['latest_price']:,.0f}",
+        )
+
+with col_down:
+    st.markdown("### Top Price Decreases")
+    for _, row in top_losers.iterrows():
+        st.metric(
+            f"{row['commodity_name']} - {row['province_name']}",
+            f"{row['change_1m']:.2f}%",
+            f"Rp {row['latest_price']:,.0f}",
+        )
 
 st.subheader("📋 National Market Report")
 st.markdown(generate_national_report(scores))
@@ -161,7 +197,6 @@ st.plotly_chart(fig_price, use_container_width=True)
 
 st.subheader("📊 Market Metrics")
 
-
 st.subheader("🔮 Price Forecast")
 
 forecast_df = forecast_price(
@@ -171,6 +206,38 @@ forecast_df = forecast_price(
 )
 
 if forecast_df is not None:
+    latest_price = filtered.sort_values("price_date").iloc[-1]["price"]
+
+    prediction = generate_prediction_summary(
+        commodity_name=selected_commodity,
+        province_name=selected_province,
+        latest_price=latest_price,
+        forecast_df=forecast_df,
+    )
+
+    p1, p2, p3 = st.columns(3)
+
+    p1.metric(
+        "Predicted Price",
+        f"Rp {prediction['final_forecast_price']:,.0f}",
+    )
+
+    p2.metric(
+        "Expected Change",
+        f"{prediction['expected_change']:.2f}%",
+    )
+
+    p3.metric(
+        "Confidence",
+        prediction["confidence"],
+    )
+
+    st.info(
+        f"**Trend:** {prediction['trend']}  \n\n"
+        f"{prediction['summary']}  \n\n"
+        f"**Recommendation:** {prediction['recommendation']}"
+    )
+
     forecast_display = forecast_df.copy()
     forecast_display["predicted_price"] = forecast_display["predicted_price"].apply(
         lambda x: f"Rp {x:,.0f}"
@@ -197,6 +264,9 @@ if forecast_df is not None:
     )
     historical_chart["type"] = "Historical"
 
+    last_historical = historical_chart.sort_values("date").iloc[-1:].copy()
+    last_historical["type"] = "Forecast"
+
     forecast_chart = forecast_df[["forecast_date", "predicted_price"]].copy()
     forecast_chart = forecast_chart.rename(
         columns={
@@ -206,6 +276,11 @@ if forecast_df is not None:
     )
     forecast_chart["date"] = pd.to_datetime(forecast_chart["date"])
     forecast_chart["type"] = "Forecast"
+
+    forecast_chart = pd.concat(
+        [last_historical, forecast_chart],
+        ignore_index=True,
+    )
 
     combined_chart = pd.concat(
         [historical_chart, forecast_chart],
@@ -240,3 +315,16 @@ if not metric_row.empty:
     c2.metric("1M Change", f"{row['change_1m']:.2f}%")
     c3.metric("3M Change", f"{row['change_3m']:.2f}%")
     c4.metric("6M Change", f"{row['change_6m']:.2f}%")
+
+
+elif page == "Data Explorer":
+    st.title("Data Explorer")
+
+    st.subheader("Commodity Prices")
+    st.dataframe(prices, use_container_width=True)
+
+    st.subheader("Market Metrics")
+    st.dataframe(metrics, use_container_width=True)
+
+    st.subheader("Commodity Scores")
+    st.dataframe(scores, use_container_width=True)
