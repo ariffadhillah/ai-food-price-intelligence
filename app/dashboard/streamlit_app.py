@@ -22,6 +22,24 @@ def generate_insight(row):
     )
 
 
+def generate_national_report(scores):
+    top = scores.sort_values("score", ascending=False)
+    top3 = top.head(3)
+
+    commodities = ", ".join(top3["commodity_name"].unique())
+    provinces = ", ".join(top3["province_name"].tolist())
+
+    high_count = len(scores[scores["risk_level"] == "HIGH"])
+
+    return f"""
+{commodities} mendominasi daftar komoditas berisiko tinggi di Indonesia.
+
+Provinsi dengan tekanan harga terbesar saat ini adalah {provinces}.
+
+Sebanyak {high_count} kombinasi komoditas-provinsi saat ini berada dalam kategori HIGH risk dan memerlukan pemantauan lebih lanjut.
+"""
+
+
 @st.cache_data
 def load_data():
     prices = pd.read_sql("SELECT * FROM commodity_prices", engine)
@@ -39,9 +57,33 @@ prices, metrics, scores = load_data()
 st.title("AI Food Price Intelligence Dashboard")
 st.caption("Indonesia basic goods price intelligence using PIHPS + PostgreSQL + Analytics")
 
+# Executive KPI Cards
+total_records = len(prices)
+total_commodities = scores["commodity_name"].nunique()
+total_provinces = scores["province_name"].nunique()
+high_risk_count = len(scores[scores["risk_level"] == "HIGH"])
+
+highest_risk = scores.sort_values("score", ascending=False).iloc[0]
+
+k1, k2, k3, k4 = st.columns(4)
+
+k1.metric("Total Price Records", f"{total_records:,}")
+k2.metric("Commodities", total_commodities)
+k3.metric("Provinces", total_provinces)
+k4.metric("High Risk Items", high_risk_count)
+
+st.info(
+    f"Highest current risk: **{highest_risk['commodity_name']}** "
+    f"in **{highest_risk['province_name']}** "
+    f"with risk score **{highest_risk['score']:.2f}**."
+)
+
+st.subheader("📋 National Market Report")
+st.markdown(generate_national_report(scores))
+
 st.subheader("🔥 Top Risk Commodities")
 
-top_risk = scores.sort_values("score", ascending=False).head(10)
+top_risk = scores.sort_values("score", ascending=False).head(10).copy()
 
 top_risk_display = top_risk.copy()
 top_risk_display["latest_price"] = top_risk_display["latest_price"].apply(lambda x: f"Rp {x:,.0f}")
@@ -66,8 +108,6 @@ st.dataframe(
     use_container_width=True,
 )
 
-
-top_risk = scores.sort_values("score", ascending=False).head(10).copy()
 top_risk["label"] = top_risk["commodity_name"] + " - " + top_risk["province_name"]
 
 fig_risk = px.bar(
