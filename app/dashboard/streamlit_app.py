@@ -80,14 +80,15 @@ def load_data():
     prices = pd.read_sql("SELECT * FROM commodity_prices", engine)
     metrics = pd.read_sql("SELECT * FROM market_metrics", engine)
     scores = pd.read_sql("SELECT * FROM commodity_scores", engine)
+    analytics = pd.read_sql("SELECT * FROM commodity_analytics", engine)
 
     prices["price_date"] = pd.to_datetime(prices["price_date"])
     scores["latest_date"] = pd.to_datetime(scores["latest_date"])
 
-    return prices, metrics, scores
+    return prices, metrics, scores, analytics
 
 
-prices, metrics, scores = load_data()
+prices, metrics, scores, analytics = load_data()
 
 
 page = st.sidebar.radio(
@@ -363,6 +364,88 @@ with col_down:
             f"{row['change_1m']:.2f}%",
             f"Rp {row['latest_price']:,.0f}",
         )
+
+
+st.subheader("🌊 Volatility & Trend Intelligence")
+
+col_vol, col_trend = st.columns(2)
+
+top_volatility = analytics.sort_values(
+    "std_price",
+    ascending=False,
+).head(10).copy()
+
+# Tambahkan label gabungan
+top_volatility["label"] = (
+    top_volatility["commodity_name"]
+    + " - "
+    + top_volatility["province_name"]
+)
+
+top_trend = analytics[
+    analytics["trend_strength"].isin(
+        ["STRONG_UPTREND", "STRONG_DOWNTREND"]
+    )
+].head(10)
+
+with col_vol:
+    st.markdown("### Most Volatile Commodities")
+
+    vol_display = top_volatility[
+        [
+            "commodity_name",
+            "province_name",
+            "avg_price",
+            "std_price",
+            "volatility_level",
+        ]
+    ].copy()
+
+    vol_display["avg_price"] = vol_display["avg_price"].apply(lambda x: f"Rp {x:,.0f}")
+    vol_display["std_price"] = vol_display["std_price"].apply(lambda x: f"Rp {x:,.0f}")
+
+    st.dataframe(vol_display, use_container_width=True)
+
+with col_trend:
+    st.markdown("### Strongest Trends")
+
+    trend_display = top_trend[
+        [
+            "commodity_name",
+            "province_name",
+            "latest_price",
+            "trend_strength",
+            "price_range",
+        ]
+    ].copy()
+
+    trend_display["latest_price"] = trend_display["latest_price"].apply(lambda x: f"Rp {x:,.0f}")
+    trend_display["price_range"] = trend_display["price_range"].apply(lambda x: f"Rp {x:,.0f}")
+
+    st.dataframe(trend_display, use_container_width=True)
+
+
+fig_volatility = px.bar(
+    top_volatility.sort_values("std_price", ascending=True),
+    x="std_price",
+    y="label",
+    color="volatility_level",
+    orientation="h",
+    title="Top Volatility by Commodity and Province",
+    hover_data=[
+        "avg_price",
+        "min_price",
+        "max_price",
+        "volatility_level",
+    ],
+)
+
+fig_volatility.update_layout(
+    xaxis_title="Standard Deviation (Price Volatility)",
+    yaxis_title="Commodity - Province",
+)
+
+st.plotly_chart(fig_volatility, use_container_width=True)
 
 
 st.subheader("📋 National Market Report")
