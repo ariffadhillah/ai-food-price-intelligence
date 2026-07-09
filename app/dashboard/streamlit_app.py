@@ -81,14 +81,19 @@ def load_data():
     metrics = pd.read_sql("SELECT * FROM market_metrics", engine)
     scores = pd.read_sql("SELECT * FROM commodity_scores", engine)
     analytics = pd.read_sql("SELECT * FROM commodity_analytics", engine)
+    provinces = pd.read_sql("SELECT * FROM province_analytics", engine)
 
     prices["price_date"] = pd.to_datetime(prices["price_date"])
     scores["latest_date"] = pd.to_datetime(scores["latest_date"])
 
-    return prices, metrics, scores, analytics
+    return prices, metrics, scores, analytics, provinces
 
 
-prices, metrics, scores, analytics = load_data()
+prices, metrics, scores, analytics, provinces = load_data()
+
+
+
+
 
 
 page = st.sidebar.radio(
@@ -446,6 +451,62 @@ fig_volatility.update_layout(
 )
 
 st.plotly_chart(fig_volatility, use_container_width=True)
+
+# end of volatility chart
+
+
+st.subheader("🗺️ Province Risk Intelligence")
+
+top_provinces = provinces.sort_values(
+    "avg_risk_score",
+    ascending=False
+).head(10).copy()
+
+province_display = top_provinces.copy()
+province_display["avg_risk_score"] = province_display["avg_risk_score"].apply(lambda x: f"{x:.2f}")
+province_display["max_risk_score"] = province_display["max_risk_score"].apply(lambda x: f"{x:.2f}")
+province_display["top_risk_price"] = province_display["top_risk_price"].apply(lambda x: f"Rp {x:,.0f}")
+
+st.dataframe(
+    province_display[
+        [
+            "province_name",
+            "avg_risk_score",
+            "max_risk_score",
+            "high_risk_count",
+            "top_risk_commodity",
+            "top_risk_price",
+            "top_risk_level",
+        ]
+    ],
+    use_container_width=True,
+)
+
+fig_province = px.bar(
+    top_provinces.sort_values("avg_risk_score", ascending=True),
+    x="avg_risk_score",
+    y="province_name",
+    color="top_risk_level",
+    orientation="h",
+    hover_data=[
+        "top_risk_commodity",
+        "max_risk_score",
+        "high_risk_count",
+        "avg_change_1m",
+        "avg_change_3m",
+        "avg_change_6m",
+    ],
+    title="Top 10 Highest Risk Provinces",
+)
+
+fig_province.update_layout(
+    xaxis_title="Average Risk Score",
+    yaxis_title="Province",
+)
+
+st.plotly_chart(fig_province, use_container_width=True)
+# end of province risk chart
+
 
 
 st.subheader("📋 National Market Report")
