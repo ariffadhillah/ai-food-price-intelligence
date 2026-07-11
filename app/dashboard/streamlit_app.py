@@ -2,9 +2,15 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 
-from app.database.db import engine
-from app.ai.price_forecaster import forecast_price, generate_prediction_summary
+from app.dashboard.data_loader import load_data
+from app.dashboard.utils import (
+    generate_insight,
+    generate_national_report,
+    generate_ai_executive_summary,
+)
 
+from app.dashboard.pages.forecast import show_forecast_analysis
+from app.dashboard.pages.explorer import show_data_explorer
 
 st.set_page_config(
     page_title="AI Food Price Intelligence",
@@ -13,87 +19,8 @@ st.set_page_config(
 )
 
 
-def generate_insight(row):
-    return (
-        f"**{row['commodity_name']} di {row['province_name']}** berada di harga "
-        f"**Rp {row['latest_price']:,.0f}**. "
-        f"Perubahan 1 bulan **{row['change_1m']:.2f}%**, "
-        f"3 bulan **{row['change_3m']:.2f}%**, "
-        f"dan 6 bulan **{row['change_6m']:.2f}%**. "
-        f"Risk score **{row['score']:.2f}** dengan level **{row['risk_level']}**."
-    )
-
-
-def generate_national_report(scores):
-    top = scores.sort_values("score", ascending=False)
-    top3 = top.head(3)
-
-    commodities = ", ".join(top3["commodity_name"].unique())
-    provinces = ", ".join(top3["province_name"].tolist())
-    high_count = len(scores[scores["risk_level"] == "HIGH"])
-
-    return f"""
-{commodities} mendominasi daftar komoditas berisiko tinggi di Indonesia.
-
-Provinsi dengan tekanan harga terbesar saat ini adalah {provinces}.
-
-Sebanyak {high_count} kombinasi komoditas-provinsi saat ini berada dalam kategori HIGH risk dan memerlukan pemantauan lebih lanjut.
-"""
-
-def generate_market_health(scores):
-    high_count = len(scores[scores["risk_level"] == "HIGH"])
-    total_count = len(scores)
-
-    high_ratio = (high_count / total_count) * 100 if total_count else 0
-
-    if high_ratio >= 20:
-        return "Volatile", "HIGH", "⚠️"
-    elif high_ratio >= 10:
-        return "Watchlist", "MEDIUM", "🟡"
-    return "Stable", "LOW", "🟢"
-
-
-def generate_ai_executive_summary(scores):
-    top = scores.sort_values("score", ascending=False)
-    highest = top.iloc[0]
-
-    top_commodity = highest["commodity_name"]
-    top_province = highest["province_name"]
-    top_score = highest["score"]
-
-    high_count = len(scores[scores["risk_level"] == "HIGH"])
-    market_status, risk_level, icon = generate_market_health(scores)
-
-    return {
-        "market_status": market_status,
-        "risk_level": risk_level,
-        "icon": icon,
-        "top_commodity": top_commodity,
-        "top_province": top_province,
-        "top_score": top_score,
-        "high_count": high_count,
-    }
-
-
-@st.cache_data
-def load_data():
-    prices = pd.read_sql("SELECT * FROM commodity_prices", engine)
-    metrics = pd.read_sql("SELECT * FROM market_metrics", engine)
-    scores = pd.read_sql("SELECT * FROM commodity_scores", engine)
-    analytics = pd.read_sql("SELECT * FROM commodity_analytics", engine)
-    provinces = pd.read_sql("SELECT * FROM province_analytics", engine)
-
-    prices["price_date"] = pd.to_datetime(prices["price_date"])
-    scores["latest_date"] = pd.to_datetime(scores["latest_date"])
-
-    return prices, metrics, scores, analytics, provinces
-
 
 prices, metrics, scores, analytics, provinces = load_data()
-
-
-
-
 
 
 page = st.sidebar.radio(
@@ -108,123 +35,21 @@ page = st.sidebar.radio(
 
 
 if page == "Data Explorer":
-    st.title("Data Explorer")
-
-    st.subheader("Commodity Prices")
-    st.dataframe(prices, use_container_width=True)
-
-    st.subheader("Market Metrics")
-    st.dataframe(metrics, use_container_width=True)
-
-    st.subheader("Commodity Scores")
-    st.dataframe(scores, use_container_width=True)
-
+    show_data_explorer(
+        prices,
+        metrics,
+        scores,
+    )
     st.stop()
+
+    # end of data explorer page
 
 
 if page == "Forecast Analysis":
-    st.title("🔮 Forecast Analysis")
-    st.caption("Prediksi harga komoditas berbasis data historis PIHPS dan model Linear Regression.")
-
-    commodity_options = sorted(prices["commodity_name"].dropna().unique())
-    province_options = sorted(prices["province_name"].dropna().unique())
-
-    col1, col2 = st.columns(2)
-
-    selected_commodity = col1.selectbox("Pilih Komoditas", commodity_options)
-    selected_province = col2.selectbox("Pilih Provinsi", province_options)
-
-    filtered = prices[
-        (prices["commodity_name"] == selected_commodity)
-        & (prices["province_name"] == selected_province)
-    ].copy()
-
-    forecast_df = forecast_price(
-        commodity_name=selected_commodity,
-        province_name=selected_province,
-        periods=3,
-    )
-
-    if forecast_df is None or filtered.empty:
-        st.warning("Data belum cukup untuk membuat forecast.")
-        st.stop()
-
-    latest_price = filtered.sort_values("price_date").iloc[-1]["price"]
-
-    prediction = generate_prediction_summary(
-        commodity_name=selected_commodity,
-        province_name=selected_province,
-        latest_price=latest_price,
-        forecast_df=forecast_df,
-    )
-
-    p1, p2, p3, p4 = st.columns(4)
-
-    p1.metric("Latest Price", f"Rp {latest_price:,.0f}")
-    p2.metric("Predicted Price", f"Rp {prediction['final_forecast_price']:,.0f}")
-    p3.metric("Expected Change", f"{prediction['expected_change']:.2f}%")
-    p4.metric("Confidence", prediction["confidence"])
-
-    st.info(
-        f"**Trend:** {prediction['trend']}  \n\n"
-        f"{prediction['summary']}  \n\n"
-        f"**Recommendation:** {prediction['recommendation']}"
-    )
-
-
-    forecast_display = forecast_df.copy()
-    forecast_display["predicted_price"] = forecast_display["predicted_price"].apply(
-        lambda x: f"Rp {x:,.0f}"
-    )
-
-    st.subheader("Forecast Table")
-    st.dataframe(forecast_display, use_container_width=True)
-
-    historical_chart = filtered[["price_date", "price"]].copy()
-    historical_chart = historical_chart.rename(
-        columns={
-            "price_date": "date",
-            "price": "price",
-        }
-    )
-    historical_chart["type"] = "Historical"
-
-    last_historical = historical_chart.sort_values("date").iloc[-1:].copy()
-    last_historical["type"] = "Forecast"
-
-    forecast_chart = forecast_df[["forecast_date", "predicted_price"]].copy()
-    forecast_chart = forecast_chart.rename(
-        columns={
-            "forecast_date": "date",
-            "predicted_price": "price",
-        }
-    )
-    forecast_chart["date"] = pd.to_datetime(forecast_chart["date"])
-    forecast_chart["type"] = "Forecast"
-
-    forecast_chart = pd.concat(
-        [last_historical, forecast_chart],
-        ignore_index=True,
-    )
-
-    combined_chart = pd.concat(
-        [historical_chart, forecast_chart],
-        ignore_index=True,
-    )
-
-    fig_forecast = px.line(
-        combined_chart,
-        x="date",
-        y="price",
-        color="type",
-        markers=True,
-        title=f"Forecast Harga {selected_commodity} - {selected_province}",
-    )
-
-    st.plotly_chart(fig_forecast, use_container_width=True)
-
+    show_forecast_analysis(prices)
     st.stop()
 
+    # end of forecast analysis page
 
 if page == "Commodity Explorer":
     st.title("📈 Commodity Explorer")
