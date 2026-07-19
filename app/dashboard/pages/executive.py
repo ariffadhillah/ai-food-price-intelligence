@@ -15,6 +15,10 @@ from app.dashboard.components.province_ranking import (
     show_province_ranking,
 )
 
+from app.dashboard.components.province_comparison import (
+    show_province_comparison,
+)
+
 def show_executive_overview(
     prices,
     metrics,
@@ -311,6 +315,8 @@ def show_executive_overview(
     show_province_risk_map(provinces)
 
     show_province_ranking(provinces)
+
+    show_province_comparison(provinces)
 
     st.subheader("📋 National Market Report")
 
