@@ -2,6 +2,8 @@ import logging
 import os
 from dataclasses import dataclass
 from typing import Optional
+from pydantic import BaseModel
+from typing import Optional, TypeVar
 
 from dotenv import load_dotenv
 from openai import (
@@ -16,6 +18,12 @@ from openai import (
 load_dotenv()
 
 logger = logging.getLogger(__name__)
+
+
+StructuredModel = TypeVar(
+    "StructuredModel",
+    bound=BaseModel,
+)
 
 
 class LLMConfigurationError(Exception):
@@ -263,6 +271,188 @@ class LLMClient:
                 "Terjadi kesalahan tak terduga saat "
                 "menghasilkan analisis AI."
             ) from exc
+
+
+    def generate_structured(
+        self,
+        prompt: str,
+        response_schema: type[StructuredModel],
+        instructions: Optional[str] = None,
+        model: Optional[str] = None,
+        max_output_tokens: int = 1800,
+    ) -> StructuredModel:
+        """
+        Generate and validate structured output using a Pydantic schema.
+        """
+
+        clean_prompt = prompt.strip()
+
+        if not clean_prompt:
+            raise ValueError(
+                "Prompt tidak boleh kosong."
+            )
+
+        if max_output_tokens <= 0:
+            raise ValueError(
+                "max_output_tokens harus lebih besar dari 0."
+            )
+
+        if not issubclass(response_schema, BaseModel):
+            raise TypeError(
+                "response_schema harus merupakan Pydantic BaseModel."
+            )
+
+        selected_model = model or self.config.model
+
+        default_instructions = (
+            "Use only the supplied data. "
+            "Do not invent missing values. "
+            "Return a response conforming exactly to the supplied schema."
+        )
+
+        try:
+            response = self.client.responses.parse(
+                model=selected_model,
+                instructions=(
+                    instructions.strip()
+                    if instructions
+                    else default_instructions
+                ),
+                input=clean_prompt,
+                text_format=response_schema,
+                max_output_tokens=max_output_tokens,
+            )
+
+            parsed_output = response.output_parsed
+
+            if parsed_output is None:
+                status = getattr(
+                    response,
+                    "status",
+                    "unknown",
+                )
+
+                incomplete_details = getattr(
+                    response,
+                    "incomplete_details",
+                    None,
+                )
+
+                incomplete_reason = getattr(
+                    incomplete_details,
+                    "reason",
+                    None,
+                )
+
+                if status == "incomplete":
+                    raise LLMGenerationError(
+                        "Structured response tidak selesai. "
+                        f"Reason: {incomplete_reason or 'unknown'}. "
+                        "Naikkan max_output_tokens."
+                    )
+
+                refusal = self._extract_refusal(response)
+
+                if refusal:
+                    raise LLMGenerationError(
+                        f"Model menolak permintaan: {refusal}"
+                    )
+
+                raise LLMGenerationError(
+                    "Model tidak menghasilkan structured output."
+                )
+
+            return parsed_output
+
+        except AuthenticationError as exc:
+            logger.exception(
+                "OpenAI authentication failed."
+            )
+            raise LLMGenerationError(
+                "Autentikasi OpenAI gagal. "
+                "Periksa OPENAI_API_KEY."
+            ) from exc
+
+        except RateLimitError as exc:
+            logger.exception(
+                "OpenAI rate limit reached."
+            )
+            raise LLMGenerationError(
+                "Batas penggunaan OpenAI tercapai. "
+                "Silakan coba kembali beberapa saat lagi."
+            ) from exc
+
+        except APITimeoutError as exc:
+            logger.exception(
+                "OpenAI structured request timed out."
+            )
+            raise LLMGenerationError(
+                "Permintaan structured output mengalami timeout."
+            ) from exc
+
+        except APIConnectionError as exc:
+            logger.exception(
+                "Unable to connect to OpenAI."
+            )
+            raise LLMGenerationError(
+                "Tidak dapat terhubung ke layanan OpenAI."
+            ) from exc
+
+        except APIStatusError as exc:
+            logger.exception(
+                "OpenAI API status error: %s",
+                exc.status_code,
+            )
+            raise LLMGenerationError(
+                f"OpenAI API mengembalikan error "
+                f"HTTP {exc.status_code}."
+            ) from exc
+
+        except LLMGenerationError:
+            raise
+
+        except Exception as exc:
+            logger.exception(
+                "Unexpected structured generation error."
+            )
+            raise LLMGenerationError(
+                "Terjadi kesalahan saat menghasilkan "
+                "structured AI response."
+            ) from exc
+
+
+
+    @staticmethod
+    def _extract_refusal(response) -> Optional[str]:
+        """
+        Extract a model refusal message when one is present.
+        """
+
+        for output_item in getattr(
+            response,
+            "output",
+            [],
+        ):
+            if getattr(output_item, "type", None) != "message":
+                continue
+
+            for content_item in getattr(
+                output_item,
+                "content",
+                [],
+            ):
+                if getattr(
+                    content_item,
+                    "type",
+                    None,
+                ) == "refusal":
+                    return getattr(
+                        content_item,
+                        "refusal",
+                        "Permintaan ditolak.",
+                    )
+
+        return None
 
 
     def health_check(self) -> dict:
