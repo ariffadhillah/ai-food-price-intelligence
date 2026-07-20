@@ -19,6 +19,10 @@ from app.dashboard.components.province_comparison import (
     show_province_comparison,
 )
 
+from app.dashboard.components.national_ai_report import (
+    show_national_ai_report,
+)
+
 def show_executive_overview(
     prices,
     metrics,
@@ -317,6 +321,13 @@ def show_executive_overview(
     show_province_ranking(provinces)
 
     show_province_comparison(provinces)
+
+    show_national_ai_report(
+        scores,
+        provinces,
+        analytics,
+    )
+    
 
     st.subheader("📋 National Market Report")
 
