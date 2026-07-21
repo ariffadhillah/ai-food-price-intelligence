@@ -5,7 +5,49 @@ from datetime import date
 from decimal import Decimal
 from typing import Any
 
-from app.database.connection import get_connection
+from datetime import date, datetime
+
+
+from app.database.db import get_connection
+
+
+def serialize_database_value(value):
+    """
+    Convert PostgreSQL values into JSON-safe Python values.
+    """
+
+    if isinstance(value, Decimal):
+        return float(value)
+
+    if isinstance(value, (date, datetime)):
+        return value.isoformat()
+
+    if isinstance(value, dict):
+        return {
+            key: serialize_database_value(item)
+            for key, item in value.items()
+        }
+
+    if isinstance(value, list):
+        return [
+            serialize_database_value(item)
+            for item in value
+        ]
+
+    return value
+
+
+def serialize_database_record(
+    record: dict,
+) -> dict:
+    """
+    Convert an entire database record into JSON-safe values.
+    """
+
+    return {
+        key: serialize_database_value(value)
+        for key, value in record.items()
+    }
 
 
 class AIReportRepository:
@@ -436,9 +478,13 @@ class AIReportRepository:
                     in cursor.description
                 ]
 
-        return dict(
+
+        record = dict(
             zip(
                 columns,
                 row,
             )
         )
+
+        return serialize_database_record(record)
+    
