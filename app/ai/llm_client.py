@@ -5,6 +5,11 @@ from typing import Optional
 from pydantic import BaseModel
 from typing import Optional, TypeVar
 
+import time
+from dataclasses import dataclass
+from typing import Generic, Optional, TypeVar
+
+
 from dotenv import load_dotenv
 from openai import (
     APIConnectionError,
@@ -32,6 +37,8 @@ class LLMConfigurationError(Exception):
 
 class LLMGenerationError(Exception):
     """Raised when text generation fails."""
+
+
 
 
 @dataclass(frozen=True)
@@ -115,6 +122,31 @@ class LLMConfig:
             timeout=timeout,
             max_retries=max_retries,
         )
+
+
+@dataclass(slots=True)
+class LLMUsage:
+    input_tokens: int | None = None
+    output_tokens: int | None = None
+    reasoning_tokens: int | None = None
+    total_tokens: int | None = None
+
+
+@dataclass(slots=True)
+class StructuredGenerationResult(
+    Generic[StructuredModel],
+):
+    data: StructuredModel
+
+    provider: str
+    model_name: str
+
+    response_id: str | None
+    response_status: str | None
+
+    latency_ms: int
+    usage: LLMUsage
+
 
 
 class LLMClient:
@@ -475,6 +507,248 @@ class LLMClient:
             "model": self.config.model,
             "response": output,
         }
+
+
+    @staticmethod
+    def _extract_usage(response) -> LLMUsage:
+        """
+        Extract token usage from an OpenAI response.
+        """
+
+        usage = getattr(
+            response,
+            "usage",
+            None,
+        )
+
+        if usage is None:
+            return LLMUsage()
+
+        input_tokens = getattr(
+            usage,
+            "input_tokens",
+            None,
+        )
+
+        output_tokens = getattr(
+            usage,
+            "output_tokens",
+            None,
+        )
+
+        total_tokens = getattr(
+            usage,
+            "total_tokens",
+            None,
+        )
+
+        reasoning_tokens = None
+
+        output_details = getattr(
+            usage,
+            "output_tokens_details",
+            None,
+        )
+
+        if output_details is not None:
+            reasoning_tokens = getattr(
+                output_details,
+                "reasoning_tokens",
+                None,
+            )
+
+        return LLMUsage(
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+            reasoning_tokens=reasoning_tokens,
+            total_tokens=total_tokens,
+        )
+
+
+def generate_structured_with_metadata(
+    self,
+    prompt: str,
+    response_schema: type[StructuredModel],
+    instructions: Optional[str] = None,
+    model: Optional[str] = None,
+    max_output_tokens: int = 1800,
+) -> StructuredGenerationResult[StructuredModel]:
+    """
+    Generate validated structured output and return execution metadata.
+    """
+
+    clean_prompt = prompt.strip()
+
+    if not clean_prompt:
+        raise ValueError(
+            "Prompt tidak boleh kosong."
+        )
+
+    if max_output_tokens <= 0:
+        raise ValueError(
+            "max_output_tokens harus lebih besar dari 0."
+        )
+
+    if not issubclass(
+        response_schema,
+        BaseModel,
+    ):
+        raise TypeError(
+            "response_schema harus merupakan Pydantic BaseModel."
+        )
+
+    selected_model = (
+        model
+        or self.config.model
+    )
+
+    default_instructions = (
+        "Use only the supplied data. "
+        "Do not invent missing values. "
+        "Return a response conforming exactly "
+        "to the supplied schema."
+    )
+
+    started_at = time.perf_counter()
+
+    try:
+        response = self.client.responses.parse(
+            model=selected_model,
+            instructions=(
+                instructions.strip()
+                if instructions
+                else default_instructions
+            ),
+            input=clean_prompt,
+            text_format=response_schema,
+            max_output_tokens=max_output_tokens,
+        )
+
+        latency_ms = round(
+            (
+                time.perf_counter()
+                - started_at
+            )
+            * 1000
+        )
+
+        parsed_output = response.output_parsed
+
+        if parsed_output is None:
+            status = getattr(
+                response,
+                "status",
+                "unknown",
+            )
+
+            incomplete_details = getattr(
+                response,
+                "incomplete_details",
+                None,
+            )
+
+            incomplete_reason = getattr(
+                incomplete_details,
+                "reason",
+                None,
+            )
+
+            if status == "incomplete":
+                raise LLMGenerationError(
+                    "Structured response tidak selesai. "
+                    f"Reason: "
+                    f"{incomplete_reason or 'unknown'}."
+                )
+
+            refusal = self._extract_refusal(
+                response,
+            )
+
+            if refusal:
+                raise LLMGenerationError(
+                    f"Model menolak permintaan: {refusal}"
+                )
+
+            raise LLMGenerationError(
+                "Model tidak menghasilkan "
+                "structured output."
+            )
+
+        return StructuredGenerationResult(
+            data=parsed_output,
+            provider="openai",
+            model_name=selected_model,
+            response_id=getattr(
+                response,
+                "id",
+                None,
+            ),
+            response_status=getattr(
+                response,
+                "status",
+                None,
+            ),
+            latency_ms=latency_ms,
+            usage=self._extract_usage(
+                response,
+            ),
+        )
+
+    except AuthenticationError as exc:
+        logger.exception(
+            "OpenAI authentication failed."
+        )
+        raise LLMGenerationError(
+            "Autentikasi OpenAI gagal. "
+            "Periksa OPENAI_API_KEY."
+        ) from exc
+
+    except RateLimitError as exc:
+        logger.exception(
+            "OpenAI rate limit reached."
+        )
+        raise LLMGenerationError(
+            "Batas penggunaan OpenAI tercapai."
+        ) from exc
+
+    except APITimeoutError as exc:
+        logger.exception(
+            "OpenAI structured request timed out."
+        )
+        raise LLMGenerationError(
+            "Permintaan structured output mengalami timeout."
+        ) from exc
+
+    except APIConnectionError as exc:
+        logger.exception(
+            "Unable to connect to OpenAI."
+        )
+        raise LLMGenerationError(
+            "Tidak dapat terhubung ke layanan OpenAI."
+        ) from exc
+
+    except APIStatusError as exc:
+        logger.exception(
+            "OpenAI API status error: %s",
+            exc.status_code,
+        )
+        raise LLMGenerationError(
+            "OpenAI API mengembalikan error "
+            f"HTTP {exc.status_code}."
+        ) from exc
+
+    except LLMGenerationError:
+        raise
+
+    except Exception as exc:
+        logger.exception(
+            "Unexpected structured generation error."
+        )
+        raise LLMGenerationError(
+            "Terjadi kesalahan saat menghasilkan "
+            "structured AI response."
+        ) from exc
+    
 
 def create_llm_client() -> LLMClient:
     """
