@@ -1,14 +1,10 @@
+from __future__ import annotations
+
 import logging
 import os
-from dataclasses import dataclass
-from typing import Optional
-from pydantic import BaseModel
-from typing import Optional, TypeVar
-
 import time
 from dataclasses import dataclass
 from typing import Generic, Optional, TypeVar
-
 
 from dotenv import load_dotenv
 from openai import (
@@ -19,6 +15,7 @@ from openai import (
     OpenAI,
     RateLimitError,
 )
+from pydantic import BaseModel
 
 load_dotenv()
 

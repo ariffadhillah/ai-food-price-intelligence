@@ -1,12 +1,9 @@
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, datetime
 from decimal import Decimal
 from typing import Any
-
-from datetime import date, datetime
-
 
 from app.database.db import get_connection
 
